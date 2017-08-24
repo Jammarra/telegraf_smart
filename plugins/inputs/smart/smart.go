@@ -60,7 +60,7 @@ func (m *Smart) Description() string {
 }
 
 func (m *Smart) Gather(acc telegraf.Accumulator) error {
-	fmt.Printf("Config: %v\n", m)
+	//fmt.Printf("Config: %v\n", m)
 	if len(m.Path) == 0 {
 		return fmt.Errorf("smartctl not found: verify that smartctl is installed and that smartctl is in your PATH")
 	}
@@ -102,10 +102,10 @@ func (m *Smart) scan() ([]string, error) {
 }
 
 func excludedDev(excludes []string, device string) bool {
-	fmt.Printf("DEBUG: %s in %v?\n", device, excludes)
+	//fmt.Printf("DEBUG: %s in %v?\n", device, excludes)
 	for _, exclude := range excludes {
 		if device == exclude {
-			fmt.Printf("DEBUG: filtered: %s\n", device)
+	//		fmt.Printf("DEBUG: filtered: %s\n", device)
 			return true
 		}
 	}
